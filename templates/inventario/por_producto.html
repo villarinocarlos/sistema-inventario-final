@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container mt-5 content-section">     
+    <div class="row mx-auto justify-content-center">
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Nombre del Producto</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fab fa-product-hunt"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventario.nombre }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Descripción</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-info-circle"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventario.descripcion }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Categoría</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-tag"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventario.categoria }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Precio</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-dollar-sign"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventario.precio }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Stock</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-warehouse"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventario.stock }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center mt-4">
+    <a href="{% url 'actualizar_producto' inventario.pk %}" class="btn btn-outline-success btn-lg">Actualizar</a>
+    <a href="{% url 'producto_eliminar' inventario.pk %}" class="btn btn-danger btn-lg">Eliminar</a>
+    <a href="{% url 'inventario_lista' %}" class="btn btn-secondary btn-lg">Cancelar</a>
+</div>
+{% endblock %}

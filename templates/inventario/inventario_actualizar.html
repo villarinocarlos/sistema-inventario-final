@@ -1,0 +1,17 @@
+{% extends '../layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <h2 class="border-bottom mb-4 text-center">Actualizar Producto</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group text-right">
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <a href="{% url 'por_producto' inventario.pk %}" class="btn btn-danger">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

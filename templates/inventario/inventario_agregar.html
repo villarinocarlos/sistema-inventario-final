@@ -1,0 +1,24 @@
+{% extends '../layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5 content-section">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3 class="card-title">Agregar Producto</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST" class="form-horizontal">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="form-group row mt-3">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-dark">Guardar</button>
+                        <a href="{% url 'inventario_lista' %}" class="btn btn-outline-dark ml-2">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
